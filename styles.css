@@ -1,0 +1,139 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #4158A6;
+}
+
+.container1{
+    
+    display: flex;
+    align-items: center;
+    background-color:#F1DEC6 ;
+    height: 15vh;
+}
+
+.logo{
+    margin-left: 0;
+    margin-top: 20px;
+}
+
+#searchProducts{
+    width: 60vw;
+    padding: 15px;
+    margin-right: 2px;
+    border-radius: 28px;
+    border: 2px solid #179BAE;
+}
+#searchProducts:focus{
+    border-color: #FF8343;
+    outline: none;
+}
+header .icon-cart{
+    margin-left: 50px;
+    position: relative;
+}
+
+header .icon-cart span{
+    display: flex;
+    width: 30px;
+    height: 30px; 
+    background-color: #FF8343;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: -20px;
+}
+.material-symbols-outlined{
+    background-color: #f6f6f6;
+    border-radius: 50% ;
+    border: 2px solid #179BAE;
+
+    height: auto;
+    padding: 8px;    
+}
+
+.navbar{
+    background-color: #179BAE;
+    height: 6vh;
+    position: relative;
+}
+
+.navbar ul {
+    display: flex;
+    list-style-type: none;
+    position:absolute ;
+    margin-top: 18px;
+    
+  }
+.navbar li a{
+    font-size: 14px;
+    font-weight: bold;
+    width: max-content;
+    margin-left: 60px;
+    background-color: #FF8343;
+    border-radius: 4px;
+    padding: 5px;
+    list-style-type: none;
+    text-decoration: none;
+    color: white;
+
+    
+}
+
+.navbar li a:hover{
+    border: 2px solid white;
+}
+
+.cart{
+    background-color: #f0f0f0;
+    height: 50vh;
+    position: relative;
+    display: flex;
+}
+
+.products{
+    position: absolute;
+    background-color: #ffffff;
+    height: 40vh;
+    border-radius: 10px;
+    margin: 3vh;
+    padding: 10px;
+    width: 65vw;
+}
+
+.List-details{
+    display: flex;
+    list-style-type: none;
+}
+
+.List-details li{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 100px;
+}
+.Product{
+    margin-left: 100px;
+    margin-right: 150px;
+}
+.Subtotal{
+    margin-left: 100px;
+}
+
+.total{
+    position: absolute;
+    background-color: #ffffff;
+    height: 40vh;
+    border-radius: 10px;
+    margin-top: 3vh;
+    margin-left: 68vw;
+    padding: 10px;
+    width: 30vw;
+}
