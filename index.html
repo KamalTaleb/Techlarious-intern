@@ -12,53 +12,86 @@
 </head>
 
 <body>
-    <div class="hero">
-        <header>
-            <div class="container1">
-                <div class="logo">
-                    <img src="../../../assets/images/Green_Minimalist_Crochet_Illustration_Handicraft_Logo-removebg-preview.png"
-                        alt="Hooked Harmony Logo">
-                </div>
-                <input type="search" id="searchProducts" name="searchProducts" placeholder="Search Products...">
-                <span class="material-symbols-outlined">search</span>
-                
-                <div class="icon-cart">
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
-                      </svg>   
-                      <span>0</span>
-                </div>
-                               
+    <header>
+        <div id="container">
+            <div class="logo">
+                <img src="../../../assets/images/Green_Minimalist_Crochet_Illustration_Handicraft_Logo-removebg-preview.png"
+                    alt="Hooked Harmony Logo">
             </div>
-            <nav class="navbar">
-                <ul class="lists">
-                    
-                    
-                    <li><a href="#" >All</a></li>
-                    <li><a href="#">My Account</a></li>
-                    <li><a href="#">Shipping Policy</a></li>
-                    <li><a href="#">Login</a></li>
-                </ul>
-            </nav>
-        </header>
 
-        <section class="cart">
-            <div class="products">
-                <ul class="List-details">
-                    <span class="Product"><li>Product</li></span>
-                    <li>Price</li>
-                    <li>Quantity</li>
-                    <span class="Subtotal"><li>Subtotal</li></span>
-                </ul>
+            <input type="search" id="searchProducts" name="searchProducts" placeholder="Search Products...">
+            <span class="material-symbols-outlined">search</span>
+
+            <!-- The icon of the cart from a website -->
+            <div class="icon-cart">
+                <svg class="w-[48px] h-[48px] text-gray-800 dark:text-white" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
+                </svg>
+
+                <!-- counter of the products in the cart  -->
+                <span>0</span>
             </div>
-            <div class="total">
-                <h3>Cart Totals<br><br></h3>
-                <p>Subtotal<br><br></p>
-                <p>Shipping <br> FAST DELIVERY (2-4 working days): 3.00$ <br> <span class="options">Shipping options will be updated during checkout</span> <br><br> <hr> </p>
-                
+
+        </div>
+        <nav class="navbar">
+            <ul class="lists">
+                <!-- All categories -->
+                <li><a href="#">All</a></li>
+                <!--sign up page -->
+                <li><a href="#">My Account</a></li>
+                <!-- focus on Cast Totals  -->
+                <li><a href="#" onclick="">Shipping Policy</a></li>
+                <!-- Go to log in page  -->
+                <li><a href="#">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="cart">
+        <div class="products">
+            <ul class="List-details">
+                <span class="Product">
+                    <li>Product</li>
+                </span>
+                <li>Price</li>
+                <li>Quantity</li>
+                <!-- Subtotal of the prodcuts  -->
+                <span class="Subtotal">
+                    <li>Subtotal</li>
+                </span>
+            </ul>
+        </div>
+
+        <div class="total">
+            <!-- Total ammount with delivery  -->
+            <h3>Cart Totals<br><br></h3>
+            <p>Subtotal<br><br></p>
+            <p>Shipping <br>
+                <br>FAST DELIVERY (2-4 working days): 3.00$ <br>
+                <br>
+                <span class="options">
+                    Shipping options will be updated during checkout
+                </span> <br><br>
+                <hr>
+                <!-- For the word Total  -->
+                <span class="Total"><br>Total</span>
+            </p>
+
+            <!-- Go to the check out page  -->
+            <a href="#" class="proceed">Proceed to checkout</a>
+
+            <!-- after clicking clear cart it must return to the home page -->
+            <div class="clear-cart">
+                <a href="#">Clear Cart</a>
             </div>
-        </section>
-        
+        </div>
+    </section>
+
+    <!-- Go back to the top of the cart page  -->
+    <div class="top">
+        <a href="#container">Back to Top</a>
     </div>
 
 </body>

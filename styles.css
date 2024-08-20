@@ -9,7 +9,7 @@ body{
     background-color: #4158A6;
 }
 
-.container1{
+#container{
     
     display: flex;
     align-items: center;
@@ -19,13 +19,13 @@ body{
 
 .logo{
     margin-left: 0;
-    margin-top: 20px;
+    margin-top: 2em;
 }
 
 #searchProducts{
     width: 60vw;
-    padding: 15px;
-    margin-right: 2px;
+    padding: 1em;
+    margin-right: 0.2em;
     border-radius: 28px;
     border: 2px solid #179BAE;
 }
@@ -34,14 +34,14 @@ body{
     outline: none;
 }
 header .icon-cart{
-    margin-left: 50px;
+    margin-left: 5em;
     position: relative;
 }
 
 header .icon-cart span{
     display: flex;
-    width: 30px;
-    height: 30px; 
+    width: 2em;
+    height: 2em; 
     background-color: #FF8343;
     justify-content: center;
     align-items: center;
@@ -55,9 +55,8 @@ header .icon-cart span{
     background-color: #f6f6f6;
     border-radius: 50% ;
     border: 2px solid #179BAE;
-
     height: auto;
-    padding: 8px;    
+    padding: 0.4em;    
 }
 
 .navbar{
@@ -70,17 +69,17 @@ header .icon-cart span{
     display: flex;
     list-style-type: none;
     position:absolute ;
-    margin-top: 18px;
+    margin-top: 2em;
     
   }
 .navbar li a{
-    font-size: 14px;
+    font-size: 1em;
     font-weight: bold;
     width: max-content;
-    margin-left: 60px;
+    margin-left: 4em;
     background-color: #FF8343;
     border-radius: 4px;
-    padding: 5px;
+    padding: 0.5em;
     list-style-type: none;
     text-decoration: none;
     color: white;
@@ -94,7 +93,7 @@ header .icon-cart span{
 
 .cart{
     background-color: #f0f0f0;
-    height: 50vh;
+    height: 47vh;
     position: relative;
     display: flex;
 }
@@ -105,7 +104,7 @@ header .icon-cart span{
     height: 40vh;
     border-radius: 10px;
     margin: 3vh;
-    padding: 10px;
+    padding: 1em;
     width: 65vw;
 }
 
@@ -115,16 +114,16 @@ header .icon-cart span{
 }
 
 .List-details li{
-    font-size: 20px;
+    font-size: 1.3em;
     font-weight: bold;
-    margin-left: 100px;
+    margin-left: 5em;
 }
 .Product{
-    margin-left: 100px;
-    margin-right: 150px;
+    margin-left: 4rem;
+    margin-right: 20rem;
 }
 .Subtotal{
-    margin-left: 100px;
+    margin-left: 7em;
 }
 
 .total{
@@ -136,4 +135,69 @@ header .icon-cart span{
     margin-left: 68vw;
     padding: 10px;
     width: 30vw;
+}
+.options{
+    font-weight: bold;
+    font-size: 2em;
+    color: #cec6c6;
+}
+
+.total .proceed{
+    text-decoration: none;
+    padding: 0.5em;
+    display: flex;
+    justify-content: center;
+    margin-top: 2.7vh;
+    margin-left: 5vw;
+    width: 20vw;
+    background-color: #179BAE;
+    border-radius: 3px;
+    color: white;
+    font-size: 1.5em;
+}
+.total a:hover{
+    background-color:#FF8343 ;
+}
+
+.total .Total{
+    font-weight: bold;
+    font-size: 2rem;
+}
+.top{
+    display: flex;
+    justify-content: center;
+    background-color: #179BAE;
+}
+.top a{
+    font-weight: bold;
+    font-size: 2em;
+    padding: 0.5em;
+    text-decoration: none;
+    color: white;
+}
+.top a:hover{
+    color: #FF8343;
+}
+
+.top, .total .clear-cart{
+    display: flex;
+    justify-content : center;
+}
+.total .clear-cart a{
+    text-decoration: none;
+    padding: 0.2em;
+    display: flex;
+    justify-content: center;
+    margin-left: 1vw;
+    margin-top: 1.3vh;
+    width: 15vw;
+    background-color: #179BAE;
+    border-radius: 3px;
+    color: white;
+    font-size: 1.5em;
+
+}
+
+.clear-cart a:hover{
+    background-color: rgb(203, 40, 40);
 }
