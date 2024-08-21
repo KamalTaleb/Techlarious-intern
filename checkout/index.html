@@ -4,54 +4,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout Page</title>
+    <title>Checkout</title>
     <link rel="stylesheet" href="styles.css">
-
 </head>
 
 <body>
     <div class="container">
-        <h1 class="title">Checkout</h1>
-        <div class="checkout-form">
-            <form id="checkoutForm">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" required>
+        <header>
+            <h1>Checkout</h1>
+        </header>
+
+        <div class="checkout-content">
+            <div class="left-column">
+                <div class="payment-info">
+                    <h2>Billing & Shipping Details</h2>
+                    <form>
+                        <!-- Shipping Information Fields -->
+                        <div class="form-group">
+                            <label for="full-name">Full Name</label>
+                            <input type="text" id="full-name" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <!--<input type="text" id="country" required>-->
+                            <select id="country" required>
+                                <option value="" disabled selected>Select your country</option>
+                                <option value="US">United States</option>
+                                <option value="CA">Canada</option>
+                                <option value="GB">United Kingdom</option>
+                                <option value="AU">Australia</option>
+                                <option value="IN">India</option>
+                                <option value="DE">Germany</option>
+                                <option value="FR">France</option>
+                                <option value="JP">Japan</option>
+                                <option value="CN">China</option>
+                                <option value="BR">Brazil</option>
+                                <option value="LB">Lebanon</option>
+                                <!-- Add more countries as needed -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <input type="text" id="address" placeholder="Area, Street Name, Building Name, Landmark"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">Town/ City</label>
+                            <input type="text" id="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="text" id="phone" placeholder="Phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">Email Address</label>
+                            <input type="email" id="email" placeholder="Email Address" required>
+                        </div>
+
+
+                        <div class="form-group checkbox">
+                            <input type="checkbox" id="same-billing">
+                            <label for="same-billing">Billing address same as shipping address</label>
+                        </div>
+
+                        <h2>Additional Information </h2>
+                        <div class="form-group">
+                            <label for="more">Order Notes (Optional) </label>
+                            <input type="text" id="more"
+                                placeholder="Notes about your order, e.g. special notes for delivery." required>
+                        </div>
+
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="address">Address</label>
-                    <input type="text" id="address" required>
-                </div>
-                <div class="form-group">
-                    <label for="city">City</label>
-                    <input type="text" id="city" required>
-                </div>
-                <div class="form-group">
-                    <label for="country">Country</label>
-                    <input type="text" id="country" required>
-                </div>
-                <form class="checkout-form">
+
+
+            </div>
+
+            <div class="right-column">
+                <div class="payment-method">
+                    <h2>Payment Method</h2>
                     <div class="form-group">
-                        <label for="phone">Phone Number:</label>
-                        <input type="tel" id="phone" name="phone" required>
+                        <input type="radio" id="cash" name="payment">
+                        <label for="cash">Cash on Delivery</label>
                     </div>
-                </form>
-                <div class="form-group">
-                    <label for="payment-method">Payment Method</label>
-                    <select id="payment-method" required>
-                        <option value="credit-card">Credit Card</option>
-                        <option value="paypal">PayPal</option>
-                        <option value="bank-transfer">Bank Transfer</option>
-                    </select>
+                    <div class="form-group">
+                        <input type="radio" id="credit" name="payment">
+                        <label for="credit">Pay via your debit/credit card</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="radio" id="coin" name="payment">
+                        <label for="coin">Bitcoin and other cryptocurrencies</label>
+                    </div>
+
                 </div>
-                <button type="submit" class="btn-submit">Place Order</button>
-            </form>
+
+                <div class="review-place-order">
+                    <h2>Place Order</h2>
+                    <button id="place-order-btn" class="place-order-btn">Place Order</button>
+                </div>
+            </div>
         </div>
     </div>
+
+    <footer>
+        <!-- later -->
+    </footer>
+
+
     <script src="script.js"></script>
 </body>
 
