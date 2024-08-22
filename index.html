@@ -3,9 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Signup & Login Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
-    
+
+    <div class="container" id="container">
+        <div class="form-container signup">
+            <form>
+                <h1>Create Account</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon">
+                        <i class="fa-brands fa-google-plus-g"></i>
+                    </a>
+                    <a href="#" class="icon">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </div>
+                <span>Or use your email for sign up</span>
+                <div style="width: 100%; display: flex;" class="icon-i">
+                    <input type="text" placeholder="Your Name" >
+                    <a class="ii"><i class="fa-solid fa-user" ></i></a>
+                </div>
+                <div style="width: 100%; display: flex;" class="icon-i">
+                    <input type="email" placeholder="Your Email">
+                    <a class="ii"><i class="fa-solid fa-envelope" ></i></a>
+                </div>
+                <div style="width: 100%; display: flex;" class="icon-i">
+                    <input type="tel" placeholder="Your Phone Number">
+                    <a class="ii"><i class="fa-solid fa-phone"></i></a>
+                </div>
+                <div style="width: 100%; display: flex;" class="icon-i">
+                    <input type="password" id="pass1" placeholder="Your Password">
+                    <button class="ii" type="button" id="1" ><i class="fa-solid fa-eye-slash"></i></button>
+                </div>
+                <div style="width: 100%; display: flex;" class="icon-i">
+                    <input type="password" id="pass2" placeholder="Confirm Your Password">
+                    <button class="ii" type="button" id="2"><i class="fa-solid fa-eye-slash"></i></button>
+                </div>
+                <button class="bttn" type="submit">Sign up</button>
+            </form>
+        </div>
+        <div class="form-container login">
+            <form>
+                <h1>Login</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon">
+                        <i class="fa-brands fa-google-plus-g"></i>
+                    </a>
+                    <a href="#" class="icon">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </div>
+                <span>Or use your email & password</span>
+                <div style="width: 100%; display: flex;" class="icon-i">
+                    <input type="email" placeholder="Your Email">
+                    <a class="ii"><i class="fa-solid fa-envelope" ></i></a>
+                </div>
+                <div style="width: 100%; display: flex;" class="icon-i">
+                    <input type="password" placeholder="Your Password">
+                    <a class="ii"><i class="fa-solid fa-lock"></i></a>
+                </div>
+                <a href="#">Forget Your Password</a>
+                <button class="bttn" type="submit">Login </button>
+            </form>
+        </div>
+        <div class="toogle-container">
+            <div class="toogle">
+                <div class="toogle-panel toogle-right">
+                    <h1>Hello Freind!</h1>
+                    <p>Signup with your personal details to use all of site features</p>
+                    <button class="hidden" id="register">Signup</button>
+                </div>
+                <div class="toogle-panel toogle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="hidden" id="login">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script1.js"></script>
 </body>
 </html>
