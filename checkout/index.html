@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Include Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
 </head>
 
 <body>
@@ -18,7 +20,7 @@
             <div class="left-column">
                 <div class="payment-info">
                     <h2>Billing & Shipping Details</h2>
-                    <form>
+                    <form id="checkoutForm">
                         <!-- Shipping Information Fields -->
                         <div class="form-group">
                             <label for="full-name">Full Name</label>
@@ -26,21 +28,40 @@
                         </div>
                         <div class="form-group">
                             <label for="country">Country</label>
-                            <!--<input type="text" id="country" required>-->
                             <select id="country" required>
                                 <option value="" disabled selected>Select your country</option>
+
+                                <!-- Americas -->
                                 <option value="US">United States</option>
                                 <option value="CA">Canada</option>
+                                <option value="BR">Brazil</option>
+                                <option value="MX">Mexico</option>
+                                <!-- Europe -->
                                 <option value="GB">United Kingdom</option>
-                                <option value="AU">Australia</option>
-                                <option value="IN">India</option>
                                 <option value="DE">Germany</option>
                                 <option value="FR">France</option>
-                                <option value="JP">Japan</option>
+                                <option value="ES">Spain</option>
+                                <option value="IT">Italy</option>
+                                <option value="RU">Russia</option>
+                                <!-- Asia -->
                                 <option value="CN">China</option>
-                                <option value="BR">Brazil</option>
+                                <option value="IN">India</option>
+                                <option value="JP">Japan</option>
+                                <option value="KR">South Korea</option>
+                                <option value="SG">Singapore</option>
+                                <option value="AE">United Arab Emirates</option>
+                                <!-- Africa -->
+                                <option value="ZA">South Africa</option>
+                                <option value="NG">Nigeria</option>
+                                <option value="EG">Egypt</option>
+                                <option value="KE">Kenya</option>
+                                <!-- Oceania -->
+                                <option value="AU">Australia</option>
+                                <option value="NZ">New Zealand</option>
+                                <!-- Middle East -->
+                                <option value="SA">Saudi Arabia</option>
                                 <option value="LB">Lebanon</option>
-                                <!-- Add more countries as needed -->
+
                             </select>
                         </div>
                         <div class="form-group">
@@ -49,57 +70,60 @@
                                 required>
                         </div>
                         <div class="form-group">
-                            <label for="city">Town/ City</label>
+                            <label for="city">Town/City</label>
                             <input type="text" id="city" required>
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone Number</label>
-                            <input type="text" id="phone" placeholder="Phone" required>
+                            <input type="text" id="phone" placeholder="Phone" pattern="^\+?[0-9]{10,15}$" required>
                         </div>
                         <div class="form-group">
-                            <label for="city">Email Address</label>
+                            <label for="email">Email Address</label>
                             <input type="email" id="email" placeholder="Email Address" required>
                         </div>
 
-
-                        <div class="form-group checkbox">
+                        <!--<div class="form-group">
                             <input type="checkbox" id="same-billing">
                             <label for="same-billing">Billing address same as shipping address</label>
-                        </div>
+                        </div>-->
 
-                        <h2>Additional Information </h2>
+                        <h2>Additional Information</h2>
                         <div class="form-group">
-                            <label for="more">Order Notes (Optional) </label>
-                            <input type="text" id="more"
-                                placeholder="Notes about your order, e.g. special notes for delivery." required>
+                            <label for="more">Order Notes (Optional)</label>
+                            <textarea id="more"
+                                placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
                         </div>
 
                     </form>
                 </div>
-
-
             </div>
 
             <div class="right-column">
                 <div class="payment-method">
                     <h2>Payment Method</h2>
                     <div class="form-group">
-                        <input type="radio" id="cash" name="payment">
-                        <label for="cash">Cash on Delivery</label>
+                        <label class="radio-container">
+                            <input type="radio" id="cash" name="payment" required>
+                            Cash on Delivery
+                        </label>
                     </div>
                     <div class="form-group">
-                        <input type="radio" id="credit" name="payment">
-                        <label for="credit">Pay via your debit/credit card</label>
+                        <label for="cod-address">Address for Cash on Delivery</label>
+                        <input type="text" id="cod-address" placeholder="Full Address" required>
+                        <button id="choose-location-btn" class="map-btn">Choose on Google Maps</button>
                     </div>
                     <div class="form-group">
-                        <input type="radio" id="coin" name="payment">
-                        <label for="coin">Bitcoin and other cryptocurrencies</label>
+                        <label class="radio-container">
+                            <input type="radio" id="credit" name="payment" required>
+                            Pay via your debit/credit card
+                        </label>
                     </div>
-
-                </div>
-
-                <div class="review-place-order">
-                    <h2>Place Order</h2>
+                    <div class="form-group">
+                        <label class="radio-container">
+                            <input type="radio" id="coin" name="payment" required>
+                            Bitcoin or USDT
+                        </label>
+                    </div>
                     <button id="place-order-btn" class="place-order-btn">Place Order</button>
                 </div>
             </div>
@@ -110,6 +134,12 @@
         <!-- later -->
     </footer>
 
+    <div id="order-success-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <p>Order placed successfully!</p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
