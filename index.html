@@ -4,96 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,500,0,0" />
     
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,500,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,500,0,0" />
     <title>Cart Page</title>
 </head>
 
 <body>
-    <header>
-        <div id="container">
-            <div class="logo">
-                <img src="../../../assets/images/Green_Minimalist_Crochet_Illustration_Handicraft_Logo-removebg-preview.png"
-                    alt="Hooked Harmony Logo">
-            </div>
-
-            <input type="search" id="searchProducts" name="searchProducts" placeholder="Search Products...">
-            <span class="material-symbols-outlined">search</span>
-
-            <!-- The icon of the cart from a website -->
-            <div class="icon-cart">
-                <svg class="w-[48px] h-[48px] text-gray-800 dark:text-white" aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                </svg>
-
-                <!-- counter of the products in the cart  -->
-                <span>0</span>
-            </div>
-
-        </div>
-        <nav class="navbar">
-            <ul class="lists">
-                <!-- All categories -->
-                <li><a href="#">All</a></li>
-                <!--sign up page -->
-                <li><a href="#">My Account</a></li>
-                <!-- focus on Cast Totals  -->
-                <li><a href="#" onclick="">Shipping Policy</a></li>
-                <!-- Go to log in page  -->
-                <li><a href="#">Login</a></li>
-            </ul>
-        </nav>
-    </header>
-
     <section class="cart">
         <div class="products">
-            <ul class="List-details">
-                <span class="Product">
-                    <li>Product</li>
-                </span>
-                <li>Price</li>
-                <li>Quantity</li>
-                <!-- Subtotal of the prodcuts  -->
-                <span class="Subtotal">
-                    <li>Subtotal</li>
-                </span>
-            </ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Discounted Price</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="product-list"></tbody>
+            </table>
         </div>
 
         <div class="total">
-            <!-- Total ammount with delivery  -->
             <h3>Cart Totals<br><br></h3>
-            <p>Subtotal<br><br></p>
-            <p>Shipping <br>
-                <br>FAST DELIVERY (2-4 working days): 3.00$ <br>
-                <br>
-                <span class="options">
-                    Shipping options will be updated during checkout
-                </span> <br><br>
-                <hr>
-                <!-- For the word Total  -->
-                <span class="Total"><br>Total</span>
+            <p id="cart-subtotal">Subtotal<br><br>$0.00</p>
+            <p>FAST DELIVERY (2-4 working days): $3.00 <br>
             </p>
-
-            <!-- Go to the check out page  -->
+            <hr>
+            <span class="Total">
+                <br><span id="cart-total">3.00</span>
+            </span>
+             <!-- redirect to the home page -->
             <a href="#" class="proceed">Proceed to checkout</a>
-
-            <!-- after clicking clear cart it must return to the home page -->
             <div class="clear-cart">
-                <a href="#">Clear Cart</a>
+                <a href="#" onclick="clearCart()">Clear Cart</a>
             </div>
+
+        </div>
+        <div class="top">
+            <a href="#product-list"><span class="material-symbols-outlined">north</span></a>
         </div>
     </section>
-
-    <!-- Go back to the top of the cart page  -->
-    <div class="top">
-        <a href="#container">Back to Top</a>
-    </div>
-
+    <script src="./app.js"></script>
 </body>
 
 </html>
