@@ -3,10 +3,10 @@ async function loadProducts() {
         const response = await fetch("products.json");
         const data = await response.json();
         const fromJson = data.products;
-        window.addEventListener('storage', function(event) {
+        window.addEventListener('storage', function (event) {
             if (event.key === 'cartItems') {
                 // const data = JSON.parse(localStorage.getItem('productsJson'));
-                renderProducts(fromJson); 
+                renderProducts(fromJson);
             }
         });
 
@@ -24,7 +24,7 @@ function renderProducts(fromJson) {
         console.error('Element with ID "product-list" not found.');
         return;
     }
-    
+
     const tbody = productList;
     tbody.innerHTML = '';
 
@@ -34,7 +34,7 @@ function renderProducts(fromJson) {
     // Match cart items with full product details from fromJson
     cartArray.forEach(cartItemId => {
         const selectedProduct = fromJson.find(product => product.id === Number(cartItemId));
-        
+
         // Check if the selectedProduct is found
         if (!selectedProduct) {
             console.error('Product not found for ID:', cartItemId);
@@ -96,7 +96,7 @@ function updateQuantity(button, change) {
     quantityCell.value = quantity;
 
     const discountedPrice = parseFloat(row.querySelector('td:nth-child(3)').textContent.replace('$', ''));
-const subtotal = discountedPrice * quantity;
+    const subtotal = discountedPrice * quantity;
 
     subtotalCell.textContent = `$${subtotal}`;
 
@@ -112,7 +112,7 @@ function updateCartSummary() {
     });
 
     const cartSubtotal = document.getElementById('cart-subtotal');
-    
+
     if (cartSubtotal) {
         cartSubtotal.innerHTML = `Subtotal<br><br>$${subtotal.toFixed(2)}`;
     } else {
@@ -122,7 +122,7 @@ function updateCartSummary() {
     const cartTotal = document.getElementById('cart-total');
     if (cartTotal) {
         const discount = subtotal * 0.11;
-        const total = subtotal - discount + 3.00; 
+        const total = subtotal - discount + 3.00;
         cartTotal.innerHTML = `
           <span>Total:</span> $${total}<br>
           <span>Discount:</span> -$${discount.toFixed(2)}
