@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Include Google Maps API -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
 </head>
 
 <body>
@@ -21,7 +19,6 @@
                 <div class="payment-info">
                     <h2>Billing & Shipping Details</h2>
                     <form id="checkoutForm">
-                        <!-- Shipping Information Fields -->
                         <div class="form-group">
                             <label for="full-name">Full Name</label>
                             <input type="text" id="full-name" placeholder="Full Name" required>
@@ -30,7 +27,6 @@
                             <label for="country">Country</label>
                             <select id="country" required>
                                 <option value="" disabled selected>Select your country</option>
-
                                 <!-- Americas -->
                                 <option value="US">United States</option>
                                 <option value="CA">Canada</option>
@@ -61,7 +57,6 @@
                                 <!-- Middle East -->
                                 <option value="SA">Saudi Arabia</option>
                                 <option value="LB">Lebanon</option>
-
                             </select>
                         </div>
                         <div class="form-group">
@@ -71,7 +66,7 @@
                         </div>
                         <div class="form-group">
                             <label for="city">Town/City</label>
-                            <input type="text" id="city" required>
+                            <input type="text" id="city" placeholder="Town/City" required>
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone Number</label>
@@ -82,18 +77,12 @@
                             <input type="email" id="email" placeholder="Email Address" required>
                         </div>
 
-                        <!--<div class="form-group">
-                            <input type="checkbox" id="same-billing">
-                            <label for="same-billing">Billing address same as shipping address</label>
-                        </div>-->
-
                         <h2>Additional Information</h2>
                         <div class="form-group">
                             <label for="more">Order Notes (Optional)</label>
                             <textarea id="more"
                                 placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
                         </div>
-
                     </form>
                 </div>
             </div>
@@ -101,29 +90,22 @@
             <div class="right-column">
                 <div class="payment-method">
                     <h2>Payment Method</h2>
+
                     <div class="form-group">
                         <label class="radio-container">
                             <input type="radio" id="cash" name="payment" required>
                             Cash on Delivery
                         </label>
-                    </div>
-                    <div class="form-group">
-                        <label for="cod-address">Address for Cash on Delivery</label>
-                        <input type="text" id="cod-address" placeholder="Full Address" required>
-                        <button id="choose-location-btn" class="map-btn">Choose on Google Maps</button>
-                    </div>
-                    <div class="form-group">
                         <label class="radio-container">
                             <input type="radio" id="credit" name="payment" required>
                             Pay via your debit/credit card
                         </label>
-                    </div>
-                    <div class="form-group">
                         <label class="radio-container">
                             <input type="radio" id="coin" name="payment" required>
                             Bitcoin or USDT
                         </label>
                     </div>
+
                     <button id="place-order-btn" class="place-order-btn">Place Order</button>
                 </div>
             </div>
@@ -131,13 +113,21 @@
     </div>
 
     <footer>
-        <!-- later -->
+        <!-- Footer content -->
     </footer>
 
+    <!-- Popups -->
     <div id="order-success-popup" class="popup">
         <div class="popup-content">
             <span class="close-btn">&times;</span>
             <p>Order placed successfully!</p>
+        </div>
+    </div>
+
+    <div id="order-error-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <p>Please fill in all the required fields.</p>
         </div>
     </div>
 

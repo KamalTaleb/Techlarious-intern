@@ -1,71 +1,62 @@
-document.getElementById('place-order-btn').addEventListener('click', function () {
-    // Get the values from the form
+document.getElementById('place-order-btn').addEventListener('click', function (event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    // Get values from the form fields
     const orderData = {
         shippingInfo: {
-            fullName: document.getElementById('full-name').value,
+            fullName: document.getElementById('full-name').value.trim(),
             country: document.getElementById('country').value,
-            address: document.getElementById('address').value,
-            city: document.getElementById('city').value,
-            phone: document.getElementById('phone').value,
-            email: document.getElementById('email').value
+            address: document.getElementById('address').value.trim(),
+            city: document.getElementById('city').value.trim(),
+            phone: document.getElementById('phone').value.trim(),
+            email: document.getElementById('email').value.trim()
         },
-        additionalInfo: document.getElementById('more').value,
-        paymentMethod: document.querySelector('input[name="payment"]:checked') ? document.querySelector('input[name="payment"]:checked').id : '',
-        codAddress: document.getElementById('cod-address').value
+        additionalInfo: document.getElementById('more').value.trim(),
+        paymentMethod: document.querySelector('input[name="payment"]:checked') ? document.querySelector('input[name="payment"]:checked').id : ''
     };
 
-    // Ensure all required fields are filled
-    if (Object.values(orderData.shippingInfo).some(field => !field) || !orderData.paymentMethod || (orderData.paymentMethod === 'cash' && !orderData.codAddress)) {
-        alert('Please fill in all the required fields.');
+    // Validate that all required fields are filled correctly
+    const isShippingInfoValid = Object.values(orderData.shippingInfo).every(field => field !== '');
+    const isPaymentMethodValid = orderData.paymentMethod !== '';
+
+    if (!isShippingInfoValid || !isPaymentMethodValid) {
+        showPopup('order-error-popup'); // Show error popup if validation fails
         return;
     }
 
     // Convert the order data to a JSON string
     const orderDataJson = JSON.stringify(orderData, null, 2);
 
-    // Save the JSON string to a file
+    // Create a Blob from the JSON string
     const blob = new Blob([orderDataJson], { type: 'application/json' });
+
+    // Create a link element and set its href to the Blob URL
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
     link.download = 'orderData.json';
-    link.click();
 
-    // Show the popup
-    const popup = document.getElementById('order-success-popup');
+    // Append the link to the body, click it to trigger the download, and remove it afterward
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    showPopup('order-success-popup'); // Show success popup
+});
+
+// Function to show a popup
+function showPopup(popupId) {
+    const popup = document.getElementById(popupId);
     popup.style.display = 'block';
 
     // Close the popup after 3 seconds
     setTimeout(() => {
         popup.style.display = 'none';
     }, 3000);
-});
-
-// Google Maps integration
-document.getElementById('choose-location-btn').addEventListener('click', function (e) {
-    e.preventDefault();
-    const map = document.getElementById('map');
-    map.style.display = 'block';
-
-    // Initialize Google Maps
-    const mapOptions = {
-        center: new google.maps.LatLng(40.712776, -74.005974), // Default to New York
-        zoom: 12
-    };
-    const gmap = new google.maps.Map(map, mapOptions);
-
-    const marker = new google.maps.Marker({
-        position: mapOptions.center,
-        map: gmap,
-        draggable: true
-    });
-
-    google.maps.event.addListener(marker, 'dragend', function () {
-        const position = marker.getPosition();
-        document.getElementById('cod-address').value = `${position.lat()}, ${position.lng()}`;
-    });
-});
+}
 
 // Close the popup when the close button is clicked
-document.querySelector('.close-btn').addEventListener('click', function () {
-    document.getElementById('order-success-popup').style.display = 'none';
+document.querySelectorAll('.close-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+        this.parentElement.parentElement.style.display = 'none';
+    });
 });
