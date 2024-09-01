@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <title>landing page</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <button class="menu-button" onclick="toggleDropdown()">
+        <i class="material-icons menu-icon"> menu </i>
+      </button>
+      <ul class="dropdown-menu" id="dropdownMenu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#home">1</a></li>
+        <li><a href="#home">2</a></li>
+        <li><a href="#home">3</a></li>
+        <li><a href="#home">4</a></li>
+      </ul>
+      <div class="logo">
+        <img src="#" alt="logo" />
+        <div class="webName"></div>
+      </div>
+      <div class="item search right" tabindex="0">
+        <div class="search-group">
+          <select>
+            <option value="all">All</option>
+            <option value="all">1</option>
+            <option value="all">2</option>
+            <option value="all">3</option>
+            <option value="all">4</option>
+          </select>
+          <input type="text" />
+          <i class="material-icons search-icon"> search </i>
+        </div>
+      </div>
+      <a href="" class="item">
+        <div class="group">
+          <i class="material-icons">account_circle</i>
+          <div class="detail">
+            Account
+            <div class="sub">Sign In</div>
+          </div>
+        </div>
+      </a>
+      <a href="" class="item">
+        <div class="group">
+          <i class="material-icons">shopping_cart</i>
+          <div class="detail">
+            Cart
+            <div class="sub">USD 0.0</div>
+          </div>
+        </div>
+      </a>
+    </nav>
+
+    <script>
+      // Function to toggle the dropdown menu
+      function toggleDropdown() {
+        const dropdownMenu = document.getElementById("dropdownMenu");
+        dropdownMenu.style.display =
+          dropdownMenu.style.display === "block" ? "none" : "block";
+      }
+
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function (event) {
+        if (
+          !event.target.matches(".menu-button") &&
+          !event.target.matches(".menu-button *")
+        ) {
+          const dropdownMenu = document.getElementById("dropdownMenu");
+          if (dropdownMenu.style.display === "block") {
+            dropdownMenu.style.display = "none";
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
