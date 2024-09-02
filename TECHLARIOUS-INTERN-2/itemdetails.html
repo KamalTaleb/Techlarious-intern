@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="itemdetails.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="product-info-container">
+        
+     
+            <div class="product-image-container">
+                <img id="main-product-image" src="" alt="Product Image">
+        
+                <!-- Image Gallery Section (below the main image) -->
+                <div class="image-gallery-container">
+                    <!-- Gallery images will be dynamically loaded -->
+                </div>
+            </div>
+
+            <!-- Product Details Section -->
+            <div class="product-details-container">
+                <h1 id="product-name"></h1>
+                <p id="product-description"></p>
+
+                <!-- Price, Delivery, and Options aligned to the left -->
+                <div class="right-sidebar-container">
+                    <div class="price">
+                        <span id="product-price">0.00 <span class="currency">USD</span></span>
+                    </div>
+                    <div class="delivery-estimation">
+                        <p id="delivery-estimation">Delivery estimation will go here.</p>
+                    </div>
+                    <div class="color-selection">
+                        <label for="color" class="color-label">Color:</label>
+                        <select id="color" change="updateImage()">
+                            <!-- Options will be populated dynamically -->
+                        </select>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="buttons">
+                        <button id="add-to-cart" onclick="addToCart()" ><a href="../cartpage/cartpage.html">Add to Cart</a></button>
+                    </div>
+
+                    <!-- WhatsApp Button (circle and small) -->
+                    <div class="Whatbutton">
+                        <button onclick="window.open('https://web.whatsapp.com/', '_blank');" class="whatsapp-button">
+                            <img src="whatsapp-logo.png" alt="WhatsApp Button">
+                        </button>
+                    </div>
+
+                    <!-- Customer Reviews Section (moved under WhatsApp button) -->
+                    <div class="customer-review-section">
+                        <h2>Customer Reviews</h2>
+                        <div class="star-rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9734;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <script src="itemdetails.js"></script>
+
+</body>
+</html>

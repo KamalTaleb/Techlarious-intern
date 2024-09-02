@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <title>landing page</title>
+  </head>
+
+  <body>
+    <div class="navbar">
+      <button class="menu-button" onclick="toggleDropdown()">
+        <i class="material-icons"> menu </i>
+      </button>
+      <ul class="dropdown-menu" id="dropdownMenu">
+        <li><a href="#" onclick="loadContent('home.html')">Home</a></li>
+        <li><a href="#" onclick="loadContent('about.html')">About</a></li>
+        <li><a href="#" onclick="loadContent('services.html')">Services</a></li>
+        <li><a href="#" onclick="loadContent('contact.html')">Contact</a></li>
+      </ul>
+
+      <div class="logo">
+        <img src="assets/images/logo.png" alt="logo" />
+      </div>
+      <div class="item search right" tabindex="0">
+        <div class="search-group">
+          <select>
+            <option value="all">All</option>
+            <option value="all">1</option>
+            <option value="all">2</option>
+            <option value="all">3</option>
+            <option value="all">4</option>
+          </select>
+          <input type="text" />
+          <i class="material-icons search-icon"> search </i>
+        </div>
+      </div>
+      <a href="signIn.html" class="item">
+        <div class="group">
+          <i class="material-icons">account_circle</i>
+          <div class="detail">
+            Account
+            <div class="sub">Sign In</div>
+          </div>
+        </div>
+      </a>
+      <a href="#" onclick="loadContent('cart.html')" class="item">
+        <div class="group">
+          <i class="material-icons">shopping_cart</i>
+          <div class="detail">
+            Cart
+            <div class="sub">USD 0.0</div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="content" id="mainContent">
+      <!-- Content from home.html will be loaded here by default -->
+    </div>
+    <script>
+      function toggleDropdown() {
+        const dropdownMenu = document.getElementById("dropdownMenu");
+        dropdownMenu.style.display =
+          dropdownMenu.style.display === "none" ? "block" : "none";
+      }
+
+      // Function to load content dynamically from other HTML files
+      function loadContent(page) {
+        fetch(page)
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("mainContent").innerHTML = data;
+          })
+          .catch((error) => console.error("Error loading content:", error));
+
+        // Hide the dropdown after selection
+        toggleDropdown();
+      }
+
+      // Load home.html by default when the page loads
+      window.onload = function () {
+        loadContent("home.html");
+      };
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function (event) {
+        if (
+          !event.target.matches(".menu-button") &&
+          !event.target.matches(".menu-button *")
+        ) {
+          const dropdownMenu = document.getElementById("dropdownMenu");
+          if (dropdownMenu.style.display === "block") {
+            dropdownMenu.style.display = "none";
+          }
+        }
+      };
+    </script>
+  </body>
+
+<!-- ........ -->
+
+ <!-- hayda el ma7tut manually -->
+  <body>
+    <header>
+      <div id="container">
+          <div class="logo">
+              <img src="../Logo.png" alt="Hooked Harmony Logo">
+          </div>
+
+          <input type="search" id="searchProducts" name="searchProducts" placeholder="Search Products...">
+          <span class="material-symbols-outlined">search</span>
+
+          <div class="icon-cart">
+              <a href="../cartpage/cartpage.html"><svg class="w-[48px] h-[48px] text-gray-800 dark:text-white"
+                      aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                      viewBox="0 0 24 24">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
+                  </svg></a>
+              <span>0</span>
+          </div>
+      </div>
+      <nav class="navbar">
+          <ul class="lists">
+              <li><a href="./landingPage.html">Home</a></li>
+              <li><a href="#footer">About</a></li>
+              <li><a href="../loginpage/login.html">Login</a></li>
+          </ul>
+      </nav>
+  </header>
+  <section>
+      <section class="categories-section">
+          <!-- First Category -->
+          <div class="category-1">
+
+              <div class="category-grid">
+                  <h2>Teddy Bears</h2>
+                  <!-- Product 1 -->
+                  <div class="product-card">
+                      <a href="../ItemDetails/itemdetails.html?id=1"><img
+                              src="./WhatsApp Image 2024-08-18 at 17.02.21_49fbe6cb.jpg" alt="Product 1"></a>
+                      <h3>Pink Bear</h3>
+
+                  </div>
+                  <!-- Product 2 -->
+                  <div class="product-card">
+                      <a href="../ItemDetails/itemdetails.html?id=2"><img
+                              src="./WhatsApp Image 2024-08-18 at 17.02.22_6d8d53b0.jpg" alt="Product 2"></a>
+                      <h3>Dark Pink Bear</h3>
+
+                  </div>
+                  <!-- Product 3 -->
+                  <div class="product-card">
+                      <a href="../ItemDetails/itemdetails.html?id=3"><img
+                              src="./WhatsApp Image 2024-08-18 at 17.02.22_b3383bea.jpg" alt="Product 3"></a>
+                      <h3>Blue Bear</h3>
+
+                  </div>
+              </div>
+          </div>
+          <!-- Second Category -->
+          <div class="category-2">
+
+              <div class="category-grid">
+                  <h2>Homemade Bags</h2>
+                  <!-- Product 4 -->
+                  <div class="product-card">
+                      <a href="../ItemDetails/itemdetails.html?id=4"><img
+                              src="./WhatsApp Image 2024-08-18 at 17.02.23_b8088a9b.jpg" alt="Product 4"></a>
+                      <h3>Offwhite Bag</h3>
+
+                  </div>
+                  <!-- Product 5 -->
+                  <div class="product-card">
+                      <a href="../ItemDetails/itemdetails.html?id=5"><img
+                              src="./WhatsApp Image 2024-08-18 at 17.02.24_0414fa6d.jpg" alt="Product 5"></a>
+                      <h3>Beige Bag</h3>
+
+                  </div>
+                  <!-- Product 6 -->
+                  <div class="product-card">
+                      <a href="../ItemDetails/itemdetails.html?id=6"><img
+                              src="./WhatsApp Image 2024-08-18 at 17.02.25_2ad92f37.jpg" alt="Product 6"></a>
+                      <h3>White Bag</h3>
+
+                  </div>
+              </div>
+          </div>
+          <div class="category-3">
+              <div class="category-grid">
+                  <h2>Key Chain</h2>
+                  <div class="product-card">
+                      <a href="../ItemDetails/itemdetails.html?id=9"><img
+                              src="./WhatsApp Image 2024-08-18 at 17.02.26_94bf7b9f.jpg" alt="Product 9"></a>
+                      <h3>Yellow Cey Chain</h3>
+                  </div>
+                  <div class="product-card">
+                      <a href="../ItemDetails/itemdetails.html?id=8"><img
+                              src="./WhatsApp Image 2024-08-18 at 17.02.26_0b510ebd.jpg" alt="Product 8"></a>
+                      <h3>Blue Key Chain</h3>
+                  </div>
+                  <div class="product-card">
+                      <a href="../ItemDetails/itemdetails.html?id=7"><img
+                              src="./WhatsApp Image 2024-08-18 at 17.02.24_036b015d.jpg" alt="Product 7"></a>
+                      <h3>Green Key Chain</h3>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+  </section>
+
+  <footer id="footer">
+      <div class="footer-logo">
+          <img src="../Logo.png" alt="Hooked Harmony Logo">
+      </div>
+
+      <div class="footer-lists">
+          <ul>
+              <li><a href="./About.html">About</a></li>
+              <li><a href="#">Contact us</a></li>
+              <li><a href="#">Resources</a></li>
+              <li><a href="#">FAQ</a></li>
+          </ul>
+      </div>
+
+      <div class="logos">
+          <p>Follow us for more inspiration</p>
+          <a href="https://www.facebook.com" target="_blank"><img src="../Facebook.png"></a>
+          <a href="https://www.threads.net/?hl=en" target="_blank"><img src="../Threads.png"></a>
+          <a href="https://www.instagram.com" target="_blank"><img src="../Instagram.png"></a>
+      </div>
+  </footer>
+  <p class="reserved">&copy;2024 All Rights Reserved</p>
+  </body> 
+
+</html>
