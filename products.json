@@ -1,17 +1,132 @@
-[
+{
+    "products":[
     {
-        "name": "Wireless Headphones",
-        "price": "$99.99",
-        "image": "https://via.placeholder.com/250"
+        "id": 1,
+        "name": "Teddy Bear",
+        "description": "Meet your new favorite cuddle buddy! Our Cuddly Brown Teddy Bear is the perfect companion for both children and adults alike. Standing at 12 inches tall, this adorable teddy bear is made from ultra-soft, high-quality plush material that’s perfect for hugging and snuggling.",
+        "price": "12.00",
+        "deliveryEstimation": "Wednesday 21. January - Friday 23. January",
+        "source": "t1.jpg",
+        "colorImage": [
+        {"id": 1,"color": "pink", "image": "p1.jpg" },
+        { "id": 2,"color": "darkpink", "image": "t2.jpg"},
+        { "id":3,"color": "blue", "image": "t3.jpg"}
+    ]
     },
     {
-        "name": "Smart Watch",
-        "price": "$199.99",
-        "image": "https://via.placeholder.com/250"
+        "id": 2,
+        "name": "Teddy Bear",
+        "description": "Meet your new favorite cuddle buddy! Our Cuddly Brown Teddy Bear is the perfect companion for both children and adults alike. Standing at 12 inches tall, this adorable teddy bear is made from ultra-soft, high-quality plush material that’s perfect for hugging and snuggling.",
+        "price": "12.00",
+        "deliveryEstimation": "Wednesday 21. January - Friday 23. January",
+        "source": "t2.jpg",
+        "color": ["pink", "darkpink", "blue"],
+        "colorImage": [
+            {"color": "darkpink", "image": "t2.jpg", "id": 2},
+            {"color": "pink", "image": "t1.jpg" ,"id": 1},
+            {"color": "blue", "image": "t3.jpg", "id":3}
+    ]
+
     },
     {
-        "name": "Bluetooth Speaker",
-        "price": "$49.99",
-        "image": "https://via.placeholder.com/250"
+        "id": 3,
+        "name": "Teddy Bear",
+        "description": "Meet your new favorite cuddle buddy! Our Cuddly Brown Teddy Bear is the perfect companion for both children and adults alike. Standing at 12 inches tall, this adorable teddy bear is made from ultra-soft, high-quality plush material that’s perfect for hugging and snuggling.",
+        "price": "12.00",
+        "deliveryEstimation": "Wednesday 21. January - Friday 23. January",
+        "source": "t3.jpg",
+        "color": ["pink", "darkpink", "blue"],
+        "colorImage": [
+            {"color": "blue", "image": "t3.jpg", "id":3},
+            {"color": "pink", "image": "t1.jpg" ,"id": 1},
+            {"color": "darkpink", "image": "t2.jpg", "id": 2}
+
+    ]
+    },
+    {
+        "id": 4,
+        "name": "Homemade Bags",
+        "description": "Handcrafted bags made from sustainable materials, perfect for daily use and special occasions.",
+        "price": "25.00",
+        "deliveryEstimation": "Monday 25. January - Wednesday 27. January",
+        "source": "s3.jpg",
+        "color": ["offwhite", "beige", "white"],
+        "colorImage": [
+        {"color": "offwhite", "image": "s3.jpg" , "id": 4},
+        {"color": "beige", "image": "s4.jpg", "id": 5},
+        {"color": "white", "image": "s5.jpg", "id": 6}
+    ]
+    },
+    {
+        "id": 5,
+        "name": "Homemade Bags",
+        "description": "Handcrafted bags made from sustainable materials, perfect for daily use and special occasions.",
+        "price": "25.00",
+        "deliveryEstimation": "Monday 25. January - Wednesday 27. January",
+        "source": "s4.jpg",
+        "color": ["offwhite", "beige", "white"],
+        "colorImage": [
+            {"color": "beige", "image": "s4.jpg", "id": 5},
+            {"color": "offwhite", "image": "s3.jpg" , "id": 4},
+            {"color": "white", "image": "s5.jpg", "id": 6}
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Homemade Bags",
+        "description": "Handcrafted bags made from sustainable materials, perfect for daily use and special occasions.",
+        "price": "25.00",
+        "deliveryEstimation": "Monday 25. January - Wednesday 27. January",
+        "source": "s5.jpg",
+        "color": ["offwhite", "beige", "white"],
+        "colorImage": [
+            {"color": "white", "image": "s5.jpg", "id": 6},
+            {"color": "offwhite", "image": "s3.jpg" , "id": 4},
+            {"color": "beige", "image": "s4.jpg", "id": 5}
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Keychain",
+        "description": "Unique, handmade keychains that add personality to your keys. Made from durable materials.",
+        "price": "5.00",
+        "deliveryEstimation": "Thursday 22. January - Saturday 24. January",
+        "source": "p1.jpg",
+        "color": ["green", "yellow", "blue"],
+        "colorImage": [
+            {"color": "green", "image": "p1.jpg", "id": 7},
+            {"color": "yellow", "image": "p2.jpg", "id": 8},
+            {"color": "blue", "image": "p3.jpg", "id": 9}
+        ]
+
+    },
+    {
+        "id": 8,
+        "name": "Keychain",
+        "description": "Unique, handmade keychains that add personality to your keys. Made from durable materials.",
+        "price": "5.00",
+        "deliveryEstimation": "Thursday 22. January - Saturday 24. January",
+        "source": "p2.jpg",
+        "color": ["green", "yellow", "blue"],
+        "colorImage": [
+            {"color": "yellow", "image": "p2.jpg", "id": 8},
+            {"color": "green", "image": "p1.jpg", "id": 7},
+            {"color": "blue", "image": "p3.jpg", "id": 9}
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Keychain",
+        "description": "Unique, handmade keychains that add personality to your keys. Made from durable materials.",
+        "price": "5.00",
+        "deliveryEstimation": "Thursday 22. January - Saturday 24. January",
+        "source": "p3.jpg",
+        "color": ["green", "yellow", "blue"],
+        "colorImage": [
+            {"color": "blue", "image": "p3.jpg", "id": 9},
+            {"color": "green", "image": "p1.jpg", "id": 7},
+            {"color": "yellow", "image": "p2.jpg", "id": 8}
+        ]
     }
 ]
+}
