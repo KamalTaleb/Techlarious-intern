@@ -11,20 +11,19 @@
     <title>landing page</title>
   </head>
   <body>
-    <nav class="navbar">
+    <div class="navbar">
       <button class="menu-button" onclick="toggleDropdown()">
-        <i class="material-icons menu-icon"> menu </i>
+        <i class="material-icons"> menu </i>
       </button>
       <ul class="dropdown-menu" id="dropdownMenu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#home">1</a></li>
-        <li><a href="#home">2</a></li>
-        <li><a href="#home">3</a></li>
-        <li><a href="#home">4</a></li>
+        <li><a href="#" onclick="loadContent('home.html')">Home</a></li>
+        <li><a href="#" onclick="loadContent('about.html')">About</a></li>
+        <li><a href="#" onclick="loadContent('services.html')">Services</a></li>
+        <li><a href="#" onclick="loadContent('contact.html')">Contact</a></li>
       </ul>
+
       <div class="logo">
-        <img src="#" alt="logo" />
-        <div class="webName"></div>
+        <img src="assets/images/logo.png" alt="logo" />
       </div>
       <div class="item search right" tabindex="0">
         <div class="search-group">
@@ -39,7 +38,7 @@
           <i class="material-icons search-icon"> search </i>
         </div>
       </div>
-      <a href="" class="item">
+      <a href="signIn.html" class="item">
         <div class="group">
           <i class="material-icons">account_circle</i>
           <div class="detail">
@@ -48,7 +47,7 @@
           </div>
         </div>
       </a>
-      <a href="" class="item">
+      <a href="#" onclick="loadContent('cart.html')" class="item">
         <div class="group">
           <i class="material-icons">shopping_cart</i>
           <div class="detail">
@@ -57,15 +56,34 @@
           </div>
         </div>
       </a>
-    </nav>
-
+    </div>
+    <div class="content" id="mainContent">
+      <!-- Content from home.html will be loaded here by default -->
+    </div>
     <script>
-      // Function to toggle the dropdown menu
       function toggleDropdown() {
         const dropdownMenu = document.getElementById("dropdownMenu");
         dropdownMenu.style.display =
-          dropdownMenu.style.display === "block" ? "none" : "block";
+          dropdownMenu.style.display === "none" ? "block" : "none";
       }
+
+      // Function to load content dynamically from other HTML files
+      function loadContent(page) {
+        fetch(page)
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("mainContent").innerHTML = data;
+          })
+          .catch((error) => console.error("Error loading content:", error));
+
+        // Hide the dropdown after selection
+        toggleDropdown();
+      }
+
+      // Load home.html by default when the page loads
+      window.onload = function () {
+        loadContent("home.html");
+      };
 
       // Close the dropdown if the user clicks outside of it
       window.onclick = function (event) {

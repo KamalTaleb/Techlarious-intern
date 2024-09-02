@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Wireless Headphones",
+        "price": "$99.99",
+        "image": "https://via.placeholder.com/250"
+    },
+    {
+        "name": "Smart Watch",
+        "price": "$199.99",
+        "image": "https://via.placeholder.com/250"
+    },
+    {
+        "name": "Bluetooth Speaker",
+        "price": "$49.99",
+        "image": "https://via.placeholder.com/250"
+    }
+]
